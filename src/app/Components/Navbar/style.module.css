@@ -1,0 +1,46 @@
+.nav{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem ;
+    height: 10vh;
+}
+.nav .left span{
+    font-size: 1.4rem;
+}
+.nav .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+    height: 6vh;
+    width: fit-content;
+}
+.nav .right a{
+    margin: 0 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav .right a:first-child{
+    margin-left: 2rem;
+}
+.nav .right a:last-child{
+    background-color: purple;
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    height: 100%;
+    margin-right: 0;
+}
+.nav .right a .profileimg{
+ width: 1.2rem;
+ /* height: auto; */
+ border-radius: 2rem;
+ margin-right: 0.6rem;
+}

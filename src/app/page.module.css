@@ -1,0 +1,7 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(12deg, rgba(2, 0, 36, 1) 0%, rgb(43, 6, 15) 26%);
+}

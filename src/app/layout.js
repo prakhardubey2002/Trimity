@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Michroma } from "next/font/google";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
-const inter = Inter({ subsets: ["latin"] });
+const inter =  Michroma({ subsets: ["latin"],weight:"400" });
 
 export const metadata = {
   title: "Trimity",
