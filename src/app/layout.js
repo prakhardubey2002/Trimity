@@ -2,7 +2,8 @@ import { Michroma } from "next/font/google";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
-const inter =  Michroma({ subsets: ["latin"],weight:"400" });
+import Navbar from "./Components/Navbar/Navbar";
+const inter = Michroma({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "Trimity",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <UserProvider>
           <ConvexClientProvider>
+            <Navbar />
             {children}
           </ConvexClientProvider>
         </UserProvider>

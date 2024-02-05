@@ -1,7 +1,102 @@
 .main {
     width: 100vw;
     height: 100vh;
+    padding: 2rem;
     overflow: hidden;
     background: rgb(2, 0, 36);
     background: linear-gradient(12deg, rgba(2, 0, 36, 1) 0%, rgb(43, 6, 15) 26%);
+    display: flex;
+    flex-direction: column;
+}
+
+.mainsection p {
+    font-size: 13px;
+}
+
+.mainsection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .left h2 {
+    font-size: 2.8rem;
+    line-height: 4rem;
+    font-weight: 600;
+}
+
+.main .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 85vh;
+}
+
+.main .left .bottom .cards {
+    display: flex;
+
+
+}
+
+.main .left .bottom .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 12px;
+    margin: 20px;
+    max-width: 100%;
+}
+.main .left .bottom .card .text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.2rem 0;
+}
+.main .left .bottom .card .text p{
+    margin: 0 0.2rem;
+    font-size: 13px;
+}
+.main .left .bottom .card p{
+    font-size: 11px;
+}
+.main .right {
+    height: 85vh;
+    width: 45vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.main .left button {
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+}
+.main .left button:hover{
+    transform: scale(1.08);
+}
+
+.main .right :after {
+    position: absolute;
+    content: "";
+}
+
+.main .right .rightimg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    /* border: 1px solid black; */
+
 }
