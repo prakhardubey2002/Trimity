@@ -30,6 +30,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <a href="/api/auth/login">Login</a>
       <p>Todos</p>
       <input type="text" value={home} onChange={(e) => setHome(e.target.value)} />
 

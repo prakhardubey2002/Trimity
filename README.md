@@ -3,7 +3,7 @@
 First, run the development server:
 ```bash
 npm run dev
-npm run convex
+npx run convex
 
 ```
 
