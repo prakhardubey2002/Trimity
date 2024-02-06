@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useUser } from '@auth0/nextjs-auth0/client';
-export default function Home() {
+export default function Todos() {
     const { user, error, isLoading } = useUser();
     const [home, setHome] = useState("");
     const createTodos = useMutation(api.todos.createTodo)

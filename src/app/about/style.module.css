@@ -1,0 +1,40 @@
+.aboutmain {
+    width: 100vw;
+    overflow: hidden;
+    min-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.aboutmain .top {
+    height: 40vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.aboutmain .top .topimg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.aboutmain h2 {
+    font-size: 2.8rem;
+    line-height: 4rem;
+    font-weight: 600;
+}
+.aboutmain .bottom .aboutcards{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 12px;
+}
+.aboutmain .bottom .aboutcards .icon{
+    font-size: 2.8rem;
+    line-height: 4rem;
+    font-weight: 600;
+}

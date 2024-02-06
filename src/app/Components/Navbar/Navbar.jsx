@@ -10,7 +10,9 @@ const Navbar = () => {
     return (
         <div className={styles.nav} >
             <div className={styles.left} >
+                <Link href="/" >
                 <span>T</span>rimity
+                </Link>
             </div>
             <div className={styles.right} >
                 <Link href="/about" >About</Link>

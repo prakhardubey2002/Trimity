@@ -3,6 +3,7 @@ import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 const inter = Michroma({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           <ConvexClientProvider>
             <Navbar />
             {children}
+            <Footer/>
           </ConvexClientProvider>
         </UserProvider>
       </body>
