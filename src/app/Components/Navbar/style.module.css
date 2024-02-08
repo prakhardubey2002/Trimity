@@ -1,15 +1,42 @@
-.nav{
+.nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem ;
+    padding: 2rem;
     height: 10vh;
 }
-.nav .left span{
+
+.nav .left span {
     font-size: 1.4rem;
 }
-.nav .right{
+
+.nav .right .container {
+    width: 30px;
+    height: 28px;
+    border: 1.5px solid #fff;
+    margin-left: 1rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2px; */
+    position: relative;
+    cursor: pointer;
+}
+
+.nav .right .container .icon {
+    /* font-size: fit-content; */
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+
+}
+
+.nav .right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,16 +48,19 @@
     height: 6vh;
     width: fit-content;
 }
-.nav .right a{
+
+.nav .right a {
     margin: 0 0.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.nav .right a:first-child{
+
+.nav .right a:first-child {
     margin-left: 2rem;
 }
-.nav .right a:last-child{
+
+.nav .right a:last-child {
     background-color: #891835;
     border-radius: 36px;
     backdrop-filter: blur(10px);
@@ -38,9 +68,10 @@
     height: 100%;
     margin-right: 0;
 }
-.nav .right a .profileimg{
- width: 1.2rem;
- /* height: auto; */
- border-radius: 2rem;
- margin-right: 0.6rem;
+
+.nav .right a .profileimg {
+    width: 1.2rem;
+    /* height: auto; */
+    border-radius: 2rem;
+    margin-right: 0.6rem;
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import { AuthProvider } from "./Context/AuthContext";
 const inter = Michroma({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <UserProvider>
           <ConvexClientProvider>
-            <Navbar />
-            {children}
-            <Footer/>
+            <AuthProvider>
+              <Navbar />
+              {children}
+              <Footer />
+            </AuthProvider>
           </ConvexClientProvider>
         </UserProvider>
       </body>

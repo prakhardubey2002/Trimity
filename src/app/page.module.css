@@ -3,8 +3,8 @@
     max-height: 88vh;
     padding: 2rem;
     overflow: hidden;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(12deg, rgba(2, 0, 36, 1) 0%, rgb(43, 6, 15) 26%);
+    /* background: rgb(2, 0, 36); */
+    /* background: linear-gradient(12deg, rgba(2, 0, 36, 1) 0%, rgb(43, 6, 15) 26%); */
     display: flex;
     flex-direction: column;
 }
