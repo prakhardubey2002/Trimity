@@ -32,7 +32,7 @@ AUTH0_CLIENT_SECRET=''
 - Lottie-web
 
 ## UI
-**Font** : Michroma
-**UI Style** : GlassMorphism
+- **Font** : Michroma
+- **UI Style** : GlassMorphism
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

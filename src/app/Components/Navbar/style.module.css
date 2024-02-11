@@ -13,27 +13,29 @@
 
 .nav .right .container {
     width: 30px;
-    height: 28px;
-    border: 1.5px solid #fff;
+    height: 30px;
+    /* border: 12px solid #fff; */
+    /* background-color: #fff; */
     margin-left: 1rem;
     border-radius: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 2px; */
+    padding: 6px;
     position: relative;
     cursor: pointer;
 }
 
-.nav .right .container .icon {
-    /* font-size: fit-content; */
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-
+.nav .right .container .iconl {
+    margin-top: 1px;
+    font-size: 6px;
+    color: yellow;
+    text-shadow: 2px 2px #ff0000;
+}
+.nav .right .container .icond {
+    margin-top: 1px;
+    font-size: 6px;
+    color: rgb(255, 255, 255);
 }
 
 .nav .right {

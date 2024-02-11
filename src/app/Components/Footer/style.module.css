@@ -8,3 +8,17 @@
 color: #fff;
 font-size: 10px;
 }
+.footer:hover span{
+    color: var(--Primary);
+}
+.footer a{
+    margin: 0 4px;
+    transition: 0.2s all ease-in-out;
+}
+.footer span{
+    margin: 0 4px;
+    transition: 0.2s all ease-in-out;
+}
+.footer:hover a{
+    color: var(--Primary);
+}
