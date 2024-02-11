@@ -6,7 +6,7 @@ import Lottie from 'lottie-web'
 import { useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { toast } from 'react-hot-toast'
-const page = () => {
+const Help = () => {
     const [fname, setFname] = useState("");
     const [Lname, setLname] = useState("");
     const [desc, setDesc] = useState("");
@@ -84,4 +84,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Help

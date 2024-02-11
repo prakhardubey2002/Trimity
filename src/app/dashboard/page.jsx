@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react'
 import styles from "./style.module.css"
-const page = () => {
+const Dashboard = () => {
     
     return (
         <div className={styles.dashboardmain} >
@@ -11,4 +11,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Dashboard
