@@ -1,0 +1,83 @@
+.helpmain {
+    min-height: 86vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.helpmain .formmain {
+    display: flex;
+    width: 44vw;
+    flex-direction: column;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+    border-radius: 1rem;
+}
+
+.helpmain .formmain input {
+    padding: 12px;
+    border-radius: 0.7rem;
+    margin: 0.4rem 0;
+    outline: 0;
+    border: 0;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+}
+
+.helpmain .formmain textarea {
+    margin: 0.4rem 0;
+    padding: 12px;
+    border-radius: 0.7rem;
+    outline: 0;
+    border: 0;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+}
+
+.formmain button {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+}
+
+.formmain button:hover {
+    transform: scale(1.06);
+    color: rgb(255, 255, 255);
+    background-color: var(--Primary);
+}
+
+.helpmain .formmain input:placeholder {
+    color: red;
+    opacity: 1;
+    /* Firefox */
+}
+
+.helpmain .supporticon {
+    max-width: 40vw;
+    max-height: 40vh;
+}
+
+.helpmain .iconcontainer {
+    max-width: 40vw;
+    max-height: 40vh;
+    overflow: hidden;
+}
