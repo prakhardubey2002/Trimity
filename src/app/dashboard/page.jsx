@@ -1,12 +1,15 @@
-"use client"
 
-import React, { useEffect } from 'react'
+
+import Link from 'next/link'
+import React from 'react'
 import styles from "./style.module.css"
+
 const Dashboard = () => {
-    
+    // console.log(params)
+
     return (
         <div className={styles.dashboardmain} >
-            Dashboard
+           x
         </div>
     )
 }

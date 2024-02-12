@@ -1,5 +1,62 @@
-.dashboardmain{
+.main {
     min-height: 86vh;
     width: 100vw;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    transition: 1s all ease-in-out;
+}
+
+.sidebaritems {
+    padding: 12px 2px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 52px;
+    height: fit-content;
+    transition: width 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebaritems a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* transform: scale(1.2); */
+    transition: 0.2s all ease-in-out;
+    width: 100%;
+    padding: 6px 7px 6px 10px ;
+}
+
+.sidebaritems a span {
+    margin: 0 4px;
+    font-size: 18px;
+}
+.sidebaritems a:hover{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+
+}
+.sidebaritems a .icon{
+    transform: scale(1.1);
+    margin: 0 1px;
+}
+.sidebaritems:hover{
+ 
+    width: 200px; 
+
 }
