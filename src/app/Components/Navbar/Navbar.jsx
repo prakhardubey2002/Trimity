@@ -61,7 +61,7 @@ const Navbar = () => {
                 <Link target='_blank' href="https://github.com/prakhardubey2002" >Github</Link>
                 <Link href="/help" >Help</Link>
                 {user && <Link href="/api/auth/logout" onClick={logout} >Logout</Link>}
-                {user ? <Link href="/" > <img className={styles.profileimg} src={user.picture} alt={user.name} />{user.name}</Link> : <Link href="/api/auth/login" onClick={login} >Login</Link>}
+                {user ? <Link href="/dashboard/profile" > <img className={styles.profileimg} src={user.picture} alt={user.name} />{user.name}</Link> : <Link href="/api/auth/login" onClick={login} >Login</Link>}
             </div>
         </div>
     )

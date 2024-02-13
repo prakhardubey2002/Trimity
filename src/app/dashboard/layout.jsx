@@ -9,6 +9,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import FeedIcon from '@mui/icons-material/Feed';
+import PersonIcon from '@mui/icons-material/Person';
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 const Layout = ({ children }) => {
     const router = useRouter();
     const { user, error, isLoading } = useUser();
@@ -51,6 +53,12 @@ const Layout = ({ children }) => {
                 </Link>
                 <Link href="/dashboard/Blogs" className={styles.item}>
                     <span><FeedIcon className={styles.icon}  /></span><span className={styles.title} >Blogs</span>
+                </Link>
+                <Link href="/dashboard/profile" className={styles.item}>
+                    <span><PersonIcon className={styles.icon}  /></span><span className={styles.title} >Profile</span>
+                </Link>
+                <Link href="/help" className={styles.item}>
+                    <span><HelpCenterIcon  className={styles.icon}  /></span><span className={styles.title} >Support</span>
                 </Link>
             </div>
             {children}

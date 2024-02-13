@@ -1,8 +1,8 @@
 import React from 'react'
-
+import styles from "./style.module.css"
 const Category = ({params}) => {
   return (
-    <div>pages: {params.category}</div>
+    <div className={styles.sidemain} >pages: {params.category}</div>
   )
 }
 
