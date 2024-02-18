@@ -34,7 +34,8 @@ export default function Home() {
       });
       router.push("/dashboard");
     } else {
-      toast.success('Login first', {
+      toast('Login first', {
+        icon:'❗',
         style: {
           border: '1px solid #713200',
           padding: '16px',

@@ -22,7 +22,10 @@ AUTH0_ISSUER_BASE_URL=''
 AUTH0_CLIENT_ID=''
 AUTH0_CLIENT_SECRET=''
 ```
-
+# Admin Panel
+```bash
+NEXT_PUBLIC_ADMIN_CREDENTIAL=''// add your own email to access admin panel on local environment
+```
 ## Tech Stack
 
 - Nextjs
