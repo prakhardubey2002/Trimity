@@ -1,6 +1,127 @@
-.adminlayout{
+.adminlayout {
     width: 100vw;
-    min-height:86vh ;
+    min-height: 86vh;
     padding: 1rem;
     margin: 0 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sidebar {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+    width: 20vw;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar .top {
+    /* width: 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar .top .Profimg {
+    border-radius: 4rem;
+    border: 2px solid var(--Primary);
+}
+
+.sidebar .top h4 {
+    font-size: 18px;
+    margin: 2px 0;
+}
+
+.sidebar .top p {
+    font-size: 8px;
+}
+
+.sidebar .bottom {
+    margin-top: 2rem;
+    /* width: 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar .bottom a {
+    font-size: 1rem;
+    padding: 0.5rem 0.2rem;
+    width: 100%;
+
+}
+
+.sidebar .bottom a:hover {
+    /* padding: 2rem; */
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+    text-shadow: 4px 2px 3px var(--Primary);
+
+}
+
+.sidebar .help {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+    text-shadow: 4px 2px 3px var(--Primary);
+    padding: 2rem;
+
+}
+
+.adminmain {
+    width: 74vw;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+}
+
+.adminmain h2 {
+    font-size: 2.4rem;
+    width: 80%;
+ 
+}
+
+.adminmain h2 span {
+    position: relative;
+}
+
+.adminmain h2 span::after {
+    position: absolute;
+    content: "";
+    bottom: -15px; /* Adjust this value to control the distance between the h2 and the signature line */
+    left: 0;
+    width: 60%;
+    height: 5px; /* Adjust this value to control the thickness of the line */
+    background-color: var(--Primary);
+    border-radius: 10px; /* Adjust this value to control the curvature of the line */
+    z-index: -1;
+    
 }

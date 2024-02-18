@@ -9,10 +9,12 @@ const Admin = () => {
     const router = useRouter();
     return (
         <div className={styles.adminmain} >
+            <span>
             <h2>
                 {/* Welcome {user.name} */}
-                Welcome {Email}
+                Welcome <span> {!isLoading ? user.name : ""}</span>
             </h2>
+            </span>
         </div>
     )
 }

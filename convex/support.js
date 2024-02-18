@@ -1,4 +1,4 @@
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 export const createsupport = mutation({
     args: {
@@ -16,3 +16,9 @@ export const createsupport = mutation({
         });
     },
 });
+export const getsupport = query({
+    args:{},
+    handler: async (ctx,args)=>{
+        return await ctx.db.query("Support").collect();
+    }
+})
