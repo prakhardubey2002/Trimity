@@ -1,6 +1,6 @@
 .adminlayout {
     width: 100vw;
-    min-height: 86vh;
+    height: 86vh;
     padding: 1rem;
     margin: 0 1rem;
     display: flex;

@@ -21,6 +21,6 @@ export const createBlog =mutation({
 })
 export const CollectBlog=query({
     handler: async (ctx)=>{
-        return await ctx.db.query("Blogs").collect();
+        return await ctx.db.query("Blogs").order("des").collect();
     }
 })
