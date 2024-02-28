@@ -9,10 +9,12 @@ import Link from 'next/link';
 const Admincategory = ({ params }) => {
   const supportRequests = useQuery(api.support.getsupport);
   const CreateBlog = useMutation(api.blog.createBlog);
+  const BlogsData = useQuery(api.blog.CollectBlog);
   const [blogdata, setBlogdata] = useState({
     title: "",
     subtitle: "",
     thumbnail: "",
+    tag:"",
     img: "",
     desc: "",
   });
@@ -24,6 +26,7 @@ const Admincategory = ({ params }) => {
       title: blogdata.title,
       subtitle: blogdata.subtitle,
       thumbnail: blogdata.thumbnail,
+      tag:blogdata.tag,
       img: blogdata.img,
       desc: blogdata.desc,
     }).then(() => {
@@ -75,6 +78,26 @@ const Admincategory = ({ params }) => {
       {params.admincategory === "Blog" && (
         <div className={styles.main}>
           sadvfblmnkg
+          <h2>Blogs</h2>
+          <div className={styles.blogcontainer} >
+
+            {
+              BlogsData?.map((blogs, index) => (
+                <div key={index} className={styles.blogcard} >
+                  <div className={styles.imgcontainer} >
+                  <img src={blogs.Image} alt="" />
+                  </div> 
+                  <p><span>{blogs.Tag}</span></p>
+                  {/* <br /> */}
+                  <h4>{blogs.Title}</h4>
+                  <p>{blogs.Subtitle.substring(0,40)}...</p>
+                  <p>Date : {new Date(blogs._creationTime).toLocaleDateString()}</p>
+                  {/* <br /> */}
+                 
+                </div>
+              ))
+            }
+          </div>
         </div>
       )}
 
@@ -111,6 +134,13 @@ const Admincategory = ({ params }) => {
               type="url"
               placeholder="Image URL"
             />
+            <label htmlFor="tag">Tag</label>
+            <select value={blogdata.tag} onChange={(e) => setBlogdata({ ...blogdata, tag: e.target.value })} name="Tag">
+              <option className={styles.option}  value="ADHD">ADHD</option>
+              <option  className={styles.option} value="PTSD"> PTSD</option>
+              <option  className={styles.option} value="Autism"> Autism</option>
+              <option  className={styles.option} value="Bipolar-Disorder">Bipolar Disorder</option>
+            </select>
             <label htmlFor="Description">Description</label>
             <textarea
               value={blogdata.desc}

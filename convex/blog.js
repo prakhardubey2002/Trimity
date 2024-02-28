@@ -6,6 +6,7 @@ export const createBlog =mutation({
         title:v.string(),
         subtitle:v.string(),
         thumbnail:v.string(),
+        tag:v.string(),
         img:v.string(),
         desc:v.string(),
     },
@@ -14,6 +15,7 @@ export const createBlog =mutation({
             Title:args.title,
             Subtitle:args.subtitle,
             Thumbnail:args.thumbnail,
+            Tag:args.tag,
             Image:args.img,
             Desc:args.desc,
         })
@@ -21,6 +23,6 @@ export const createBlog =mutation({
 })
 export const CollectBlog=query({
     handler: async (ctx)=>{
-        return await ctx.db.query("Blogs").order("des").collect();
+        return await ctx.db.query("Blogs").collect();
     }
 })

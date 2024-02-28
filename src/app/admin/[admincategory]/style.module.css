@@ -19,7 +19,8 @@
     margin: 1rem 0;
     font-size: 1rem;
 }
-.main .SupportPoints button{
+
+.main .SupportPoints button {
     padding: 6px 16px;
     margin: 0.5rem 0;
     border-radius: 2rem;
@@ -28,14 +29,17 @@
     background-color: var(--Primary);
     transition: 0.1s all ease-in-out;
 }
-.main .SupportPoints button:hover{
+
+.main .SupportPoints button:hover {
     transform: scale(1.04);
 }
-.main .Blogform{
+
+.main .Blogform {
     display: flex;
     flex-direction: column;
 }
-.main .Blogform input{
+
+.main .Blogform input {
     margin: 0.4rem 0;
     padding: 6px;
     border-radius: 0.7rem;
@@ -48,7 +52,27 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: 0.2s all ease-in-out;
 }
-.main .Blogform textarea{
+.main .Blogform select{
+    margin: 0.4rem 0;
+    padding: 6px;
+    border-radius: 0.7rem;
+    outline: 0;
+    border: 0;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+}
+.main .Blogform  .option{
+    color: black;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.2s all ease-in-out;
+    background-color: inherit;
+}
+.main .Blogform textarea {
     margin: 0.4rem 0;
     padding: 6px;
     border-radius: 0.7rem;
@@ -61,6 +85,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: 0.2s all ease-in-out;
 }
+
 .main .Blogform button {
     width: fit-content;
     padding: 8px 16px;
@@ -77,4 +102,65 @@
     transform: scale(1.06);
     color: rgb(255, 255, 255);
     background-color: var(--Primary);
+}
+
+.main .blogcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    /* background-color: darkblue; */
+}
+
+.main .blogcontainer .blogcard {
+    width: 220px;
+    min-height: 140px;
+    border-radius: 2rem;
+    margin: 0.2rem;
+    padding: 0.7rem 0.6rem;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+}
+.main .blogcontainer .blogcard h4{
+    margin-top: 0.4rem;
+}
+.main .blogcontainer .blogcard .imgcontainer {
+    width: 100%;
+    min-height: 100px;
+    border-radius: 1.4rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+}
+
+.main .blogcontainer .blogcard .imgcontainer img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.main .blogcontainer .blogcard  p{
+    font-size: 10px;
+}
+.main .blogcontainer .blogcard  p span{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+    padding: 0.1rem 0.4rem;
 }
