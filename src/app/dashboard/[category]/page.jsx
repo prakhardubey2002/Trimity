@@ -9,7 +9,8 @@ const Category = ({ params }) => {
   const { user, error, isLoading } = useUser();
   const [fname, setFname] = useState("");
   const [Lname, setLname] = useState("");
-  const [mainemail, setMainEmail] = useState(user.email)
+  const [mainemail, setMainEmail] = useState(user?.email);
+ 
   const [email, setEmail] = useState("")
   const [bio, setBio] = useState("");
   const [gender, setGender] = useState("");
@@ -109,6 +110,13 @@ const Category = ({ params }) => {
         <div>
           Blog
         </div>
+      }
+      {
+        params.category === "chatbot" &&
+        <div>
+          chat
+        </div>
+
       }
 
     </div>
