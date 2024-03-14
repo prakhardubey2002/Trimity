@@ -1,4 +1,4 @@
-.sidemain{
+.sidemain {
     width: 80vw;
     height: 80vh;
     padding: 12px 16px;
@@ -12,7 +12,7 @@
     overflow: auto;
 }
 
- .formmain {
+.formmain {
     display: flex;
     /* width: 44vw; */
     flex-direction: column;
@@ -25,7 +25,7 @@
     border-radius: 1rem;
 }
 
- .formmain input {
+.formmain input {
     padding: 12px;
     border-radius: 0.7rem;
     margin: 0.4rem 0;
@@ -39,7 +39,7 @@
     transition: 0.2s all ease-in-out;
 }
 
- .formmain textarea {
+.formmain textarea {
     margin: 0.4rem 0;
     padding: 12px;
     border-radius: 0.7rem;
@@ -52,7 +52,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: 0.2s all ease-in-out;
 }
-.formmain button{
+
+.formmain button {
     background-color: #891835;
     border-radius: 36px;
     backdrop-filter: blur(10px);
@@ -62,7 +63,112 @@
     border: 0;
     transition: 0.2s all ease-in-out;
 }
-.formmain button:hover{
+
+.formmain button:hover {
     cursor: pointer;
     transform: scale(1.10);
+}
+
+.mainchatbotContainer {
+    margin: 0.1rem 0 ;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    /* background-color: #891835; */
+    padding: 1rem;
+    position: relative;
+    /* display: flex; */
+}
+
+/* chatbot  */
+.content {
+    /* width: 80vw; */
+    /* margin: 10vh 10vw; */
+    /* padding: 5vh 5vw; */
+
+    border-radius: 1rem;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content p {
+    width: fit-content;
+    max-width: 94%;
+    margin: 2rem 0;
+    padding: .5rem;
+    border-radius: .5rem;
+    display: flex;
+}
+
+.content p:nth-of-type(2n) {
+    /* background-color: red; */
+    text-align: right;
+    margin-left: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.content p:nth-of-type(2n) .chaticon{
+     display: none;
+    }
+    .content p:nth-of-type(2n+1) {
+        /* background-color: blue; */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    .content p:nth-of-type(2n+1) .chaticon{
+        display: block;
+        margin-right: 0.4rem;
+}
+
+.inpurContainer {
+    width: 96%;
+    /* margin: 5vh 10vw; */
+    padding: 0.5rem;
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05); */
+    transition: 0.2s all ease-in-out;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    /* margin-top: 4rem; */
+}
+
+.inpurContainer input {
+    padding: 12px;
+    width: 100%;
+    border-radius: 0.7rem;
+    margin: 0.4rem 0;
+    outline: 0;
+    border: 0;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+}
+
+.inpurContainer button {
+   padding: 1rem 1.2rem ;
+    /* height: 100%; */
+    background: #891835;
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inpurContainer button .icon{
+    font-size: 14px;
+    margin-left: 5px;
+}
+.inpurContainer button:hover {
+    transform: scale(1.08);
 }
