@@ -242,23 +242,28 @@
     /* background-color: aliceblue; */
 }
 .pomodoromain .lottietimer{
-    width: 400px;
+    width: 380px;
     height: 400px;
     overflow: hidden;
+    /* border: 1px solid #fff; */
     position: relative;
 }
 .pomodoromain .lottietimer #timer-animation{
-    position: absolute;
+    /* position: absolute;
     width: fit-content;
-    height: fit-content;
+    height: fit-content; */
 }
 .pomodoromain .buttonrow{
+    /* width: 600px; */
     display: flex;
     flex-direction: row;
-    background-color: red;
+    /* background-color: red; */
 }
 .pomodoromain .buttonrow button{
     margin: 0.2rem 0.4rem;
+}
+.pomodoromain .TimerCount{
+    font-size: 1.8rem;
 }
 .pomodoromain  button {
     padding: 1rem 1.2rem ;
@@ -272,4 +277,11 @@
      display: flex;
      justify-content: center;
      align-items: center;
+ }
+ .pomodoromain .buttontimer{
+    padding: 6px 18px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
  }

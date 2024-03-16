@@ -9,6 +9,8 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SendIcon from '@mui/icons-material/Send';
 import Lottie from 'lottie-web';
 import Pomodoro from "../animation/Pomodoro"
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
 const Category = ({ params }) => {
   useEffect(() => {
     Lottie.loadAnimation({
@@ -200,19 +202,19 @@ const Category = ({ params }) => {
       {
         params.category === "Pomodoro" &&
         <div className={styles.pomodoromain} >
-          <h1>Pomodoro App</h1>
+          <h1>Pomodoro   </h1>
           <div className={styles.lottietimer} >
           <div id='timer-animation' >
           </ div>
           </div>
-          <div classname={styles.buttonrow} >
+            <p className={styles.TimerCount} >{formatTime(timer)}</p>
+            <button className={styles.buttontimer} onClick={handleStartStop}>{isRunning ? <PauseIcon/> : <PlayArrowIcon/>}</button>
+          <div className={styles.buttonrow} >
             <button onClick={() => handleTimerSelection(15)}>15 minutes</button>
             <button onClick={() => handleTimerSelection(25)}>25 minutes</button>
             <button onClick={() => handleTimerSelection(45)}>45 minutes</button>
           </div>
           <div>
-            <p>{formatTime(timer)}</p>
-            <button onClick={handleStartStop}>{isRunning ? 'Stop' : 'Start'}</button>
           </div>
           <p>Selected Time: {selectedTime} minutes</p>
         </div>
