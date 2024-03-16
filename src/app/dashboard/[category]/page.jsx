@@ -1,15 +1,27 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./style.module.css"
 import { useUser } from '@auth0/nextjs-auth0/client';
-import { useMutation } from 'convex/react';
+import { useMutation, useQuery } from 'convex/react';
 import { toast } from 'react-hot-toast';
 import { api } from '../../../../convex/_generated/api';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SendIcon from '@mui/icons-material/Send';
+import Lottie from 'lottie-web';
+import Pomodoro from "../animation/Pomodoro"
 const Category = ({ params }) => {
-  const { user, error, isLoading } = useUser();
+  useEffect(() => {
+    Lottie.loadAnimation({
+      container: document.querySelector("#timer-animation"),
+      animationData: Pomodoro,
+      // path: "https://lottie.host/embed/44e3fd55-f3f4-47bf-9555-6d8f8e58fa77/SY6AVbGEOW.json",
+      loop: true,
+      autoplay: true,
+    });
+  }, []);
 
+  const { user, error, isLoading } = useUser();
+  const BlogsData = useQuery(api.blog.CollectBlog);
 
   const [content, setContent] = useState(["Hi how can I help you?"])
   const [message, setMessage] = useState("");
@@ -85,7 +97,38 @@ const Category = ({ params }) => {
     });
 
   }
+  const [timer, setTimer] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [selectedTime, setSelectedTime] = useState(0);
 
+  useEffect(() => {
+    let intervalId;
+
+    if (isRunning) {
+      intervalId = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+    } else {
+      clearInterval(intervalId);
+    }
+
+    return () => clearInterval(intervalId);
+  }, [isRunning, timer]);
+
+  const handleStartStop = () => {
+    setIsRunning((prevIsRunning) => !prevIsRunning);
+  };
+
+  const handleTimerSelection = (time) => {
+    setTimer(time * 60);
+    setSelectedTime(time);
+  };
+
+  const formatTime = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
   return (
     <div className={styles.sidemain} >
       {/* pages: {params.category} */}
@@ -135,8 +178,43 @@ const Category = ({ params }) => {
       }
       {
         params.category === "Blogs" &&
-        <div>
-          Blog
+        <div className={styles.blogcontainer} >
+          {
+            BlogsData?.map((blogs, index) => (
+              <div key={index} className={styles.blogcard} >
+                <div className={styles.imgcontainer} >
+                  <img src={blogs.Image} alt="" />
+                </div>
+                <p><span>{blogs.Tag}</span></p>
+                {/* <br /> */}
+                <h4>{blogs.Title}</h4>
+                <p>{blogs.Subtitle.substring(0, 40)}...</p>
+                <p>Date : {new Date(blogs._creationTime).toLocaleDateString()}</p>
+                {/* <br /> */}
+
+              </div>
+            ))
+          }
+        </div>
+      }
+      {
+        params.category === "Pomodoro" &&
+        <div className={styles.pomodoromain} >
+          <h1>Pomodoro App</h1>
+          <div className={styles.lottietimer} >
+          <div id='timer-animation' >
+          </ div>
+          </div>
+          <div classname={styles.buttonrow} >
+            <button onClick={() => handleTimerSelection(15)}>15 minutes</button>
+            <button onClick={() => handleTimerSelection(25)}>25 minutes</button>
+            <button onClick={() => handleTimerSelection(45)}>45 minutes</button>
+          </div>
+          <div>
+            <p>{formatTime(timer)}</p>
+            <button onClick={handleStartStop}>{isRunning ? 'Stop' : 'Start'}</button>
+          </div>
+          <p>Selected Time: {selectedTime} minutes</p>
         </div>
       }
       {
