@@ -204,11 +204,11 @@ const Category = ({ params }) => {
         <div className={styles.pomodoromain} >
           <h1>Pomodoro   </h1>
           <div className={styles.lottietimer} >
-          <div id='timer-animation' >
-          </ div>
+            <div id='timer-animation' >
+            </ div>
           </div>
-            <p className={styles.TimerCount} >{formatTime(timer)}</p>
-            <button className={styles.buttontimer} onClick={handleStartStop}>{isRunning ? <PauseIcon/> : <PlayArrowIcon/>}</button>
+          <p className={styles.TimerCount} >{formatTime(timer)}</p>
+          <button className={styles.buttontimer} onClick={handleStartStop}>{isRunning ? <PauseIcon /> : <PlayArrowIcon />}</button>
           <div className={styles.buttonrow} >
             <button onClick={() => handleTimerSelection(15)}>15 minutes</button>
             <button onClick={() => handleTimerSelection(25)}>25 minutes</button>
@@ -240,6 +240,27 @@ const Category = ({ params }) => {
           </div>
         </div>
 
+      }
+      {
+        params.category === "Task" &&
+        <div className={styles.Tasklistmain} >
+          <div className={styles.right} >
+            All Task
+          </div>
+          <div className={styles.left} >
+            <h4>Add task</h4>
+            <div className={styles.taskfrom}>
+              <label htmlFor="Title"></label>
+              <input type="text" placeholder='Title'  />
+              <input type="text" placeholder='subTitle'  />
+              <input type="text" placeholder='description' />
+              <input type="text" placeholder='hours'  />
+              <input type="text" placeholder='Relavant Link' />
+              <button>Submit</button>
+            </div>
+          </div>
+
+        </div>
       }
 
     </div>
