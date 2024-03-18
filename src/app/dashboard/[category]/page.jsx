@@ -257,7 +257,7 @@ const Category = ({ params }) => {
           {
             BlogsData?.map((blogs, index) =>
             (
-              <Link href={
+              <Link key={index} href={
                 {
                   pathname: "/blog",
                   query: {
@@ -265,7 +265,7 @@ const Category = ({ params }) => {
                   },
                 }
               } >
-                <div key={index} className={styles.blogcard}>
+                <div  className={styles.blogcard}>
                   <div className={styles.imgcontainer}>
                     <img src={blogs.Image} alt="" />
                   </div>
