@@ -17,6 +17,7 @@ import type {
 import type * as blog from "../blog.js";
 import type * as profile from "../profile.js";
 import type * as support from "../support.js";
+import type * as task from "../task.js";
 import type * as todos from "../todos.js";
 
 /**
@@ -31,6 +32,7 @@ declare const fullApi: ApiFromModules<{
   blog: typeof blog;
   profile: typeof profile;
   support: typeof support;
+  task: typeof task;
   todos: typeof todos;
 }>;
 export declare const api: FilterApi<

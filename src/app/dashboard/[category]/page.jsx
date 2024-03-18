@@ -24,7 +24,53 @@ const Category = ({ params }) => {
 
   const { user, error, isLoading } = useUser();
   const BlogsData = useQuery(api.blog.CollectBlog);
-
+  const createTask = useMutation(api.task.createTask)
+  const [taskdata, settaskdata] = useState({
+    title: "",
+    subtitle: "",
+    link: "",
+    desc: "",
+    Date: "",
+    time: "",
+  });
+  const submittask = (e) => {
+    e.preventDefault();
+    createTask({
+      title: taskdata.title,
+      subtitle: taskdata.subtitle,
+      desc: taskdata.desc,
+      link: taskdata.link,
+      date: taskdata.Date,
+      time: taskdata.time,
+      email: user.email,
+    }).then(() => {
+      toast.success(`task added`, {
+        style: {
+          border: '1px solid #713200',
+          padding: '16px',
+          color: '#fff',
+          background: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(10px)',
+          borderRadius: '2rem',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05)',
+          transition: '0.2s all ease-in-out',
+        },
+        iconTheme: {
+          primary: '#713200',
+          secondary: '#FFFAEE',
+        },
+      });
+      settaskdata({
+        ...taskdata,
+        title: "",
+        subtitle: "",
+        link: "",
+        desc: "",
+        Date: "",
+        time: "",
+      });
+    })
+  }
   const [content, setContent] = useState(["Hi how can I help you?"])
   const [message, setMessage] = useState("");
 
@@ -247,18 +293,51 @@ const Category = ({ params }) => {
           <div className={styles.right} >
             All Task
           </div>
-          <div className={styles.left} >
+          <div className={styles.left}>
             <h4>Add task</h4>
             <div className={styles.taskfrom}>
-              <label htmlFor="Title"></label>
-              <input type="text" placeholder='Title'  />
-              <input type="text" placeholder='subTitle'  />
-              <input type="text" placeholder='description' />
-              <input type="text" placeholder='hours'  />
-              <input type="text" placeholder='Relavant Link' />
-              <button>Submit</button>
+              <label htmlFor="Title">Title</label>
+              <input
+                type="text"
+                placeholder="Title"
+                value={taskdata.title}
+                onChange={(e) => settaskdata({ ...taskdata, title: e.target.value })}
+              />
+              <input
+                type="text"
+                placeholder="SubTitle"
+                value={taskdata.subtitle}
+                onChange={(e) => settaskdata({ ...taskdata, subtitle: e.target.value })}
+              />
+              <textarea
+                placeholder="Description"
+                value={taskdata.desc}
+                onChange={(e) => settaskdata({ ...taskdata, desc: e.target.value })}
+                cols="30"
+                rows="10"
+              ></textarea>
+              <input
+                type="text"
+                placeholder="Relevant Link"
+                value={taskdata.link}
+                onChange={(e) => settaskdata({ ...taskdata, link: e.target.value })}
+              />
+              <input
+                type="date"
+                value={taskdata.Date}
+                onChange={(e) => settaskdata({ ...taskdata, Date: e.target.value })}
+              />
+              <input
+                type="time"
+                value={taskdata.time}
+                onChange={(e) => settaskdata({ ...taskdata, time: e.target.value })}
+              />
+              <span>
+                <button onClick={submittask} >Submit</button>
+              </span>
             </div>
           </div>
+
 
         </div>
       }
