@@ -351,7 +351,7 @@ const Category = ({ params }) => {
               {
                 TaskData?.map((data, index) => (
                   data.Email === user.email ? (
-                    <div className={styles.Task} >
+                    <div key={index} className={styles.Task} >
                       <div className={styles.top} >
                         <h3> <span>{index + 1}</span> {data.Title}</h3>
                         <h4>{data.Subtitle}</h4>
