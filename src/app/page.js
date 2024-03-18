@@ -32,7 +32,7 @@ export default function Home() {
           secondary: '#FFFAEE',
         },
       });
-      router.push("/dashboard");
+      router.push("/dashboard/Pomodoro");
     } else {
       toast('Login first', {
         icon:'❗',

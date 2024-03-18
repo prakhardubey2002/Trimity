@@ -366,3 +366,29 @@
     cursor: pointer;
     transform: scale(1.10);
 }
+.Tasklistmain .right .taskbox{
+    display: flex;
+    flex-wrap: wrap;
+}
+.Tasklistmain .right .Task{
+    padding: 7px 8px;
+    min-height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s all ease-in-out;
+    border-radius: 12px;
+    width: 40%;
+    font-size: 8px;
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+/* .blogcard a{
+    background:  #891835;
+    padding: 2px 4px;
+    border-radius: 2rem;
+} */

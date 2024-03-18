@@ -44,10 +44,10 @@ const Layout = ({ children }) => {
     return (
         <div className={styles.main} >
             <div className={styles.sidebaritems} >
-                <Link href="/dashboard" className={styles.item}>
-                    {/* Foldername/categoryname ,category name can be obtained in slug layout using params property */}
+                {/* <Link href="/dashboard" className={styles.item}>
+                    
                     <span><HomeIcon className={styles.icon} /></span><span className={styles.title} >Home </span>
-                </Link>
+                </Link> */}
                 <Link href="/dashboard/Pomodoro" className={styles.item}>
                     {/* Foldername/categoryname ,category name can be obtained in slug layout using params property */}
                     <span><AccessTimeIcon className={styles.icon} /></span><span className={styles.title} >Pomodoro</span>

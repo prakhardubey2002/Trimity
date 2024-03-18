@@ -11,6 +11,9 @@ import Lottie from 'lottie-web';
 import Pomodoro from "../animation/Pomodoro"
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
+import LinkIcon from '@mui/icons-material/Link';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 const Category = ({ params }) => {
   useEffect(() => {
     Lottie.loadAnimation({
@@ -22,9 +25,13 @@ const Category = ({ params }) => {
     });
   }, []);
 
+  const router = useRouter();
+
   const { user, error, isLoading } = useUser();
   const BlogsData = useQuery(api.blog.CollectBlog);
-  const createTask = useMutation(api.task.createTask)
+  const createTask = useMutation(api.task.createTask);
+  const TaskData = useQuery(api.task.CollectTask);
+
   const [taskdata, settaskdata] = useState({
     title: "",
     subtitle: "",
@@ -33,6 +40,26 @@ const Category = ({ params }) => {
     Date: "",
     time: "",
   });
+  const [specificBlogdata, SetSpecificBlogData] = useState({
+    title: "affdvf",
+    subtitle: "",
+    thumbnail: "",
+    tag: "",
+    img: "",
+    desc: "",
+  })
+
+  const set = (blogs) => {
+    SetSpecificBlogData({
+      title: "wendnsfcwjrvsvj",
+      subtitle: blogs.Subtitle,
+      thumbnail: blogs.thumbnail,
+      tag: blogs.Tag,
+      img: blogs.Image,
+      desc: blogs.Desc,
+    })
+
+  }
   const submittask = (e) => {
     e.preventDefault();
     createTask({
@@ -228,21 +255,48 @@ const Category = ({ params }) => {
         params.category === "Blogs" &&
         <div className={styles.blogcontainer} >
           {
-            BlogsData?.map((blogs, index) => (
-              <div key={index} className={styles.blogcard} >
-                <div className={styles.imgcontainer} >
-                  <img src={blogs.Image} alt="" />
-                </div>
-                <p><span>{blogs.Tag}</span></p>
-                {/* <br /> */}
-                <h4>{blogs.Title}</h4>
-                <p>{blogs.Subtitle.substring(0, 40)}...</p>
-                <p>Date : {new Date(blogs._creationTime).toLocaleDateString()}</p>
-                {/* <br /> */}
+            BlogsData?.map((blogs, index) =>
+            (
+              <Link href={
+                {
+                  pathname: "/blog",
+                  query: {
+                    data: JSON.stringify(blogs)
+                  },
+                }
+              } >
+                <div key={index} className={styles.blogcard}>
+                  <div className={styles.imgcontainer}>
+                    <img src={blogs.Image} alt="" />
+                  </div>
+                  <p><span>{blogs.Tag}</span></p>
+                  <h4>{blogs.Title}</h4>
+                  <p>{blogs.Subtitle.substring(0, 40)}...</p>
+                  <p>Date: {new Date(blogs._creationTime).toLocaleDateString()}</p>
+{/* 
+                  <Link href={
+                    {
+                      pathname: "/blog",
+                      query: {
+                        data: JSON.stringify(blogs)
+                      },
+                    }
+                  } > Read</Link> */}
 
-              </div>
+                </div>
+              </Link>
             ))
           }
+
+        </div>
+      }
+
+      {
+
+        params.category === "Blog" &&
+        <div>
+          {specificBlogdata.title}
+          {specificBlogdata.subtitle}
         </div>
       }
       {
@@ -291,7 +345,27 @@ const Category = ({ params }) => {
         params.category === "Task" &&
         <div className={styles.Tasklistmain} >
           <div className={styles.right} >
-            All Task
+            <h2> All Task</h2>
+            <div className={styles.taskbox} >
+
+              {
+                TaskData?.map((data, index) => (
+                  data.Email === user.email ? (
+                    <div className={styles.Task} >
+                      <div className={styles.top} >
+                        <h3> <span>{index + 1}</span> {data.Title}</h3>
+                        <h4>{data.Subtitle}</h4>
+                        <p>{data.Date}</p>
+                      </div>
+                      <div className={styles.bottom} >
+                        <h4>{data.Desc.substring(0, 200)}  </h4>
+                        {data.Link != "" && <a target='_blank' href={data.Link}><LinkIcon /></a>}
+                      </div>
+
+                    </div>) : null
+                ))
+              }
+            </div>
           </div>
           <div className={styles.left}>
             <h4>Add task</h4>
@@ -342,7 +416,7 @@ const Category = ({ params }) => {
         </div>
       }
 
-    </div>
+    </div >
   )
 }
 

@@ -77,7 +77,7 @@ const Admincategory = ({ params }) => {
 
       {params.admincategory === "Blog" && (
         <div className={styles.main}>
-          sadvfblmnkg
+          {/* sadvfblmnkg */}
           <h2>Blogs</h2>
           <div className={styles.blogcontainer} >
 

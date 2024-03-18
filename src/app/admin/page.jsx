@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Chart from "chart.js";
 import { useQuery } from 'convex/react';
 import { api } from '../../../convex/_generated/api';
+import Link from 'next/link';
 const Admin = () => {
     const BlogsDateData = useQuery(api.blog.CollectBlog);
     const supportRequests = useQuery(api.support.getsupport);
@@ -63,7 +64,7 @@ const Admin = () => {
                 responsive: true,
                 title: {
                     display: false,
-                    text: "Sales Charts",
+                    text: "admin data",
                     fontColor: "white",
                 },
                 legend: {
@@ -95,7 +96,7 @@ const Admin = () => {
                             },
                             gridLines: {
                                 display: false,
-                                borderDash: [2],
+                                borderDash: [4],
                                 borderDashOffset: [2],
                                 color: "rgba(33, 37, 41, 0.3)",
                                 zeroLineColor: "rgba(0, 0, 0, 0)",
@@ -132,7 +133,7 @@ const Admin = () => {
         var ctx = document.getElementById("line-chart").getContext("2d");
         window.myLine = new Chart(ctx, config);
         const data = {
-            labels: ['ADHD', 'Autism', ],
+            labels: ['ADHD', 'Autism',],
             datasets: [{
                 label: 'Sample Data',
                 data: [12, 2],
@@ -148,26 +149,26 @@ const Admin = () => {
             }],
         };
 
-        const configx = {
-            type: 'pie',
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Sample Pie Chart',
-                    },
-                },
-            },
-        };
+        // const configx = {
+        //     type: 'pie',
+        //     data: data,
+        //     options: {
+        //         responsive: true,
+        //         plugins: {
+        //             legend: {
+        //                 position: 'top',
+        //             },
+        //             title: {
+        //                 display: true,
+        //                 text: 'Sample Pie Chart',
+        //             },
+        //         },
+        //     },
+        // };
 
-        const chartInstance = new Chart(chartContainer.current, configx);
+        // const chartInstance = new Chart(chartContainer.current, configx);
 
-        return () => chartInstance.destroy();
+        // return () => chartInstance.destroy();
     }, [BlogMonths, supportRequestsMonths]);
     const Email = process.env.NEXT_PUBLIC_ADMIN_CREDENTIAL;
     const { user, error, isLoading } = useUser();
@@ -193,7 +194,7 @@ const Admin = () => {
                         <canvas id="line-chart"></canvas>
                     </div>
                 </div>
-                <div className={styles.piedata} >
+                {/* <div className={styles.piedata} >
                     <h4>
                         User Type
                     </h4>
@@ -201,6 +202,23 @@ const Admin = () => {
                         <canvas ref={chartContainer} width="100" height="100"></canvas>
                     </div>
 
+                </div> */}
+            </div>
+            <div className={styles.main}>
+                <h2>Top Support Queries</h2>
+                <div className={styles.supportquesry}>
+                    {supportRequests?.map((data, index) => (
+                        <div className={styles.SupportPoints} key={data._id}>
+                            <h4>{index + 1}. Name: {data.FirstName}</h4>
+                            {/* <p>Date: {new Date(data._creationTime).toLocaleDateString()}</p> */}
+                            <p>Desc: {`${data.Description.substring(0, 20)}...`}</p>
+                            <button>
+                                <Link href={"mailto:" + data.Email}>
+                                    Reply To mail
+                                </Link>
+                            </button>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
