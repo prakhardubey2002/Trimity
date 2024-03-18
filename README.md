@@ -15,6 +15,7 @@ npx convex dev
 # Deployment used by `npx convex dev`
 CONVEX_DEPLOYMENT=""
 NEXT_PUBLIC_CONVEX_URL=""
+OPEN_AI_API_KEY =""//for using chat assistant
 # Next Auth configuration
 AUTH0_SECRET=''
 AUTH0_BASE_URL='http://localhost:3000'
